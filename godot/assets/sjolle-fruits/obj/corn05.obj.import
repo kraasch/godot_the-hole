@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dt0x8qwg1vd5a"
+path="res://.godot/imported/corn05.obj-0d627da5bc2b52e042e2d8b57e0214ff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/corn05.obj-0d627da5bc2b52e042e2d8b57e0214ff.mesh"]
+
+source_file="res://assets/sjolle-fruits/obj/corn05.obj"
+dest_files=["res://.godot/imported/corn05.obj-0d627da5bc2b52e042e2d8b57e0214ff.mesh", "res://.godot/imported/corn05.obj-0d627da5bc2b52e042e2d8b57e0214ff.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://clbef7wcjicvs"
+path="res://.godot/imported/mango02.obj-1f884c01a58c858e7d4d0b74f20e7dfe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mango02.obj-1f884c01a58c858e7d4d0b74f20e7dfe.mesh"]
+
+source_file="res://assets/sjolle-fruits/obj/mango02.obj"
+dest_files=["res://.godot/imported/mango02.obj-1f884c01a58c858e7d4d0b74f20e7dfe.mesh", "res://.godot/imported/mango02.obj-1f884c01a58c858e7d4d0b74f20e7dfe.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

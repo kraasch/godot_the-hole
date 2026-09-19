@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dh5b4w7vsbryr"
+path="res://.godot/imported/scallion01.obj-b28977cf50eb8c0a1e562cd5398ea939.mesh"
+
+[deps]
+
+files=["res://.godot/imported/scallion01.obj-b28977cf50eb8c0a1e562cd5398ea939.mesh"]
+
+source_file="res://assets/sjolle-fruits/obj/scallion01.obj"
+dest_files=["res://.godot/imported/scallion01.obj-b28977cf50eb8c0a1e562cd5398ea939.mesh", "res://.godot/imported/scallion01.obj-b28977cf50eb8c0a1e562cd5398ea939.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

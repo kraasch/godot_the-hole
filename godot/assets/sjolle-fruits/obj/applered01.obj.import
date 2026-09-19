@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drj30yoxs1isb"
+path="res://.godot/imported/applered01.obj-c1a75e026447854d1f901a30be14f234.mesh"
+
+[deps]
+
+files=["res://.godot/imported/applered01.obj-c1a75e026447854d1f901a30be14f234.mesh"]
+
+source_file="res://assets/sjolle-fruits/obj/applered01.obj"
+dest_files=["res://.godot/imported/applered01.obj-c1a75e026447854d1f901a30be14f234.mesh", "res://.godot/imported/applered01.obj-c1a75e026447854d1f901a30be14f234.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
