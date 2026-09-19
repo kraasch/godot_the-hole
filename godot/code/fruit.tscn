@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bkksp0jckyj07"]
 
 [ext_resource type="Script" uid="uid://bhuvv8gqbrym4" path="res://code/fruit.gd" id="1_w8lvk"]
+[ext_resource type="PackedScene" uid="uid://bp4y7wrlt2uoj" path="res://assets/sjolle-fruits/gltf/pear01.gltf" id="2_bj1hb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wq341"]
 
@@ -19,4 +20,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_wq341")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=503230006]
+visible = false
 mesh = SubResource("SphereMesh_dfspy")
+
+[node name="pear01" parent="." unique_id=1986035699 instance=ExtResource("2_bj1hb")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.42089844, 0)
