@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bkksp0jckyj07"]
+
+[ext_resource type="Script" uid="uid://bhuvv8gqbrym4" path="res://code/fruit.gd" id="1_w8lvk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wq341"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8lvk"]
+albedo_color = Color(0.9091512, 0, 0.13658354, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_dfspy"]
+material = SubResource("StandardMaterial3D_w8lvk")
+
+[node name="fruit" type="RigidBody3D" unique_id=1790978716]
+collision_mask = 3
+script = ExtResource("1_w8lvk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=174909883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_wq341")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=503230006]
+mesh = SubResource("SphereMesh_dfspy")

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://xdk81b8dvht3"]
+
+[ext_resource type="Script" uid="uid://hg6ben00nrfl" path="res://code/world.gd" id="1_kypmd"]
+[ext_resource type="PackedScene" uid="uid://be3onjxl23txg" path="res://code/hole.tscn" id="1_p5rxp"]
+[ext_resource type="Script" uid="uid://2al7kj6anq0e" path="res://code/camera.gd" id="2_kypmd"]
+[ext_resource type="PackedScene" uid="uid://bkksp0jckyj07" path="res://code/fruit.tscn" id="4_obmn1"]
+[ext_resource type="PackedScene" uid="uid://d13bxkc3fsu32" path="res://code/ground.tscn" id="5_d0phi"]
+
+[sub_resource type="Environment" id="Environment_jafpi"]
+
+[node name="world" type="Node3D" unique_id=201095611]
+script = ExtResource("1_kypmd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1370827985]
+environment = SubResource("Environment_jafpi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2017382877]
+transform = Transform3D(1, 0, 0, 0, 0.17717867, 0.9841787, 0, -0.9841787, 0.17717867, 5.947863, 14.755028, 4.4995527)
+
+[node name="hole" parent="." unique_id=1789251797 instance=ExtResource("1_p5rxp")]
+unique_name_in_owner = true
+
+[node name="cam" type="Camera3D" parent="." unique_id=1461655496]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.6416526, 0.76699543, 0, -0.76699543, 0.6416526, 0, 5.352954, 4.7178016)
+script = ExtResource("2_kypmd")
+
+[node name="fruit" parent="." unique_id=1790978716 instance=ExtResource("4_obmn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.277, 0, 0)
+sleeping = true
+
+[node name="fruit2" parent="." unique_id=2077803736 instance=ExtResource("4_obmn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8615508, 0, 3.2385607)
+sleeping = true
+
+[node name="fruit3" parent="." unique_id=926774008 instance=ExtResource("4_obmn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.847282, 0, 3.2385607)
+sleeping = true
+
+[node name="fruit4" parent="." unique_id=713468477 instance=ExtResource("4_obmn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.855794, 0, -0.26494598)
+sleeping = true
+
+[node name="fruit5" parent="." unique_id=1454708212 instance=ExtResource("4_obmn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6961422, 0, -3.079687)
+sleeping = true
+
+[node name="fruit6" parent="." unique_id=116780063 instance=ExtResource("4_obmn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103942394, 0, -4.0174284)
+sleeping = true
+
+[node name="fruit7" parent="." unique_id=1262952077 instance=ExtResource("4_obmn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6826034, 0, -2.7269402)
+sleeping = true
+
+[node name="ground" parent="." unique_id=1706077484 instance=ExtResource("5_d0phi")]
+unique_name_in_owner = true
