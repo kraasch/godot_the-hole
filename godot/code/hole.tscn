@@ -6,7 +6,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j5t2e"]
 render_priority = 0
 shader = ExtResource("1_uawpn")
-shader_parameter/transparency = 0.5
+shader_parameter/transparency = 0.16800000798
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_jafpi"]
 top_radius = 2.0
