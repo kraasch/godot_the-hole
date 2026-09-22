@@ -38,6 +38,9 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 func _on_area_3d_2_body_exited(body: Node3D) -> void:
 	_grow_hole()
 
+func _ready() -> void:
+	_grow_hole()
+	
 func _grow_hole() -> void:
 	#body.owner.queue_free() # TODO: remove the fruits.
 	print('+1UP')
@@ -48,9 +51,6 @@ func _grow_hole() -> void:
 	cylinder_mesh.bottom_radius = shape.radius
 	grows_in_radius.emit(shape.radius)
 	_update_pilars()
-
-func _ready() -> void:
-	_grow_hole()
 
 func _update_pilars() -> void:
 	var cylinder: CylinderShape3D = ring.shape
