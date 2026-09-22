@@ -12,3 +12,4 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 	cam.target = hole
 	ground.target = hole
+	hole.grows_in_radius.connect(ground.update_radius)

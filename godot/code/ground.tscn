@@ -10,7 +10,7 @@ size = Vector3(1000, 1, 1000)
 render_priority = 0
 shader = ExtResource("1_jq7eu")
 shader_parameter/hole_world_position = Vector3(0, 0, 0)
-shader_parameter/hole_radius = 2.2570001072075
+shader_parameter/hole_radius = 2.0810000988475
 shader_parameter/albedo_color = Color(7.941574e-07, 0.43767914, 0.28532052, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dfspy"]
