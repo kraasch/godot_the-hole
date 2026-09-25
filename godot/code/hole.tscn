@@ -9,36 +9,39 @@ shader = ExtResource("1_uawpn")
 shader_parameter/transparency = 0.16800000798
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_jafpi"]
-top_radius = 1.0625
-bottom_radius = 1.0625
+top_radius = 0.5875
+bottom_radius = 0.5875
 height = 0.1
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dfspy"]
 height = 0.1
-radius = 0.4
+radius = 0.5875
 
-[node name="hole" type="MeshInstance3D" unique_id=1789251797]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8333333, 0, 1.0833333)
-material_override = SubResource("ShaderMaterial_j5t2e")
-mesh = SubResource("CylinderMesh_jafpi")
+[node name="hole" type="Node3D" unique_id=271024452]
 script = ExtResource("1_j5t2e")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=742191072]
+[node name="mesh" type="MeshInstance3D" parent="." unique_id=1789251797]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+material_override = SubResource("ShaderMaterial_j5t2e")
+mesh = SubResource("CylinderMesh_jafpi")
 
-[node name="ring" type="CollisionShape3D" parent="Area3D" unique_id=1105946284]
+[node name="Area3D" type="Area3D" parent="mesh" unique_id=742191072]
+
+[node name="ring" type="CollisionShape3D" parent="mesh/Area3D" unique_id=1105946284]
 unique_name_in_owner = true
 shape = SubResource("CylinderShape3D_dfspy")
 
-[node name="Area3D2" type="Area3D" parent="." unique_id=330765247]
+[node name="Area3D2" type="Area3D" parent="mesh" unique_id=330765247]
 
-[node name="detector" type="CollisionShape3D" parent="Area3D2" unique_id=1040727125]
+[node name="detector" type="CollisionShape3D" parent="mesh/Area3D2" unique_id=1040727125]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 shape = SubResource("CylinderShape3D_dfspy")
 
-[node name="static_body" type="StaticBody3D" parent="." unique_id=126271642]
+[node name="static_body" type="StaticBody3D" parent="mesh" unique_id=126271642]
 unique_name_in_owner = true
 collision_layer = 3
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
-[connection signal="body_exited" from="Area3D2" to="." method="_on_area_3d_2_body_exited"]
+[connection signal="body_entered" from="mesh/Area3D" to="mesh" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="mesh/Area3D" to="mesh" method="_on_area_3d_body_exited"]
+[connection signal="body_exited" from="mesh/Area3D2" to="mesh" method="_on_area_3d_2_body_exited"]

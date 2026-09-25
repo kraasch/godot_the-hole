@@ -1,12 +1,12 @@
 @tool
-extends MeshInstance3D
+extends Node3D
 class_name MyHole
 
 const GROWTH_INCREMENT: float = 1.0 / 16.0
-
 signal grows_in_radius(new_radius: float)
 
 @export var speed: float = 5.0
+@onready var mesh: MeshInstance3D = %mesh
 @onready var ring: CollisionShape3D = %ring
 @onready var static_body: StaticBody3D = %static_body
 
@@ -46,7 +46,7 @@ func _grow_hole() -> void:
 	print('+1UP')
 	var shape: CylinderShape3D = ring.shape
 	shape.radius += GROWTH_INCREMENT
-	var cylinder_mesh: CylinderMesh = mesh as CylinderMesh
+	var cylinder_mesh: CylinderMesh = mesh.mesh as CylinderMesh
 	cylinder_mesh.top_radius = shape.radius
 	cylinder_mesh.bottom_radius = shape.radius
 	grows_in_radius.emit(shape.radius)
