@@ -63,17 +63,99 @@ func create_collision_ring(
 ) -> void:
 	for child: Node in parent.get_children():
 		child.queue_free()
-	var pilar_depth: float = 6.0
-	var pilar_dimension: float = 0.5
+	var pillar_depth: float = 6.0
+	var pillar_dimension: float = 0.5
 	var radius: float = cylinder_shape.radius
+	var inner_radius: float = radius
+	radius += pillar_dimension
+	var half_depth: float = pillar_depth * 0.5
+	var faces: PackedVector3Array = PackedVector3Array()
 	for i in range(shape_count):
-		var angle: float = TAU * float(i) / float(shape_count)
-		var collision: CollisionShape3D = CollisionShape3D.new()
-		var shape: BoxShape3D = BoxShape3D.new()
-		shape.size = Vector3(pilar_dimension, pilar_depth, pilar_dimension)
-		collision.shape = shape
-		var pos_x: float = cos(angle) * radius
-		var pos_z: float = sin(angle) * radius
-		collision.position = Vector3(pos_x, -pilar_depth/2.0, pos_z)
-		collision.rotation.y = PI - angle
-		parent.add_child(collision)
+		var angle0: float = TAU * float(i) / float(shape_count)
+		var angle1: float = TAU * float(i + 1) / float(shape_count)
+		var cos0: float = cos(angle0)
+		var sin0: float = sin(angle0)
+		var cos1: float = cos(angle1)
+		var sin1: float = sin(angle1)
+		var outer_bottom0: Vector3 = Vector3(
+			cos0 * radius,
+			-half_depth,
+			sin0 * radius
+		)
+		var outer_bottom1: Vector3 = Vector3(
+			cos1 * radius,
+			-half_depth,
+			sin1 * radius
+		)
+		var outer_top0: Vector3 = Vector3(
+			cos0 * radius,
+			half_depth,
+			sin0 * radius
+		)
+		var outer_top1: Vector3 = Vector3(
+			cos1 * radius,
+			half_depth,
+			sin1 * radius
+		)
+		var inner_bottom0: Vector3 = Vector3(
+			cos0 * inner_radius,
+			-half_depth,
+			sin0 * inner_radius
+		)
+		var inner_bottom1: Vector3 = Vector3(
+			cos1 * inner_radius,
+			-half_depth,
+			sin1 * inner_radius
+		)
+		var inner_top0: Vector3 = Vector3(
+			cos0 * inner_radius,
+			half_depth,
+			sin0 * inner_radius
+		)
+		var inner_top1: Vector3 = Vector3(
+			cos1 * inner_radius,
+			half_depth,
+			sin1 * inner_radius
+		)
+		# Top surface.
+		faces.append_array([
+			outer_top0,
+			outer_top1,
+			inner_top1,
+			outer_top0,
+			inner_top1,
+			inner_top0,
+		])
+		# Bottom surface.
+		faces.append_array([
+			outer_bottom0,
+			inner_bottom1,
+			outer_bottom1,
+			outer_bottom0,
+			inner_bottom0,
+			inner_bottom1,
+		])
+		# Outer wall.
+		faces.append_array([
+			outer_bottom0,
+			outer_top1,
+			outer_bottom1,
+			outer_bottom0,
+			outer_top0,
+			outer_top1,
+		])
+		# Inner wall.
+		faces.append_array([
+			inner_bottom0,
+			inner_bottom1,
+			inner_top1,
+			inner_bottom0,
+			inner_top1,
+			inner_top0,
+		])
+	var shape: ConcavePolygonShape3D = ConcavePolygonShape3D.new()
+	shape.set_faces(faces)
+	var collision_shape: CollisionShape3D = CollisionShape3D.new()
+	collision_shape.shape = shape
+	collision_shape.global_position.y = -pillar_depth / 2.0
+	parent.add_child(collision_shape)
