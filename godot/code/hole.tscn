@@ -15,7 +15,7 @@ height = 0.1
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dfspy"]
 height = 0.1
-radius = 0.5875
+radius = 0.4
 
 [node name="hole" type="Node3D" unique_id=271024452]
 script = ExtResource("1_j5t2e")
@@ -33,6 +33,7 @@ unique_name_in_owner = true
 shape = SubResource("CylinderShape3D_dfspy")
 
 [node name="Area3D2" type="Area3D" parent="mesh" unique_id=330765247]
+collision_mask = 0
 
 [node name="detector" type="CollisionShape3D" parent="mesh/Area3D2" unique_id=1040727125]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
@@ -42,6 +43,6 @@ shape = SubResource("CylinderShape3D_dfspy")
 unique_name_in_owner = true
 collision_layer = 3
 
-[connection signal="body_entered" from="mesh/Area3D" to="mesh" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="mesh/Area3D" to="mesh" method="_on_area_3d_body_exited"]
-[connection signal="body_exited" from="mesh/Area3D2" to="mesh" method="_on_area_3d_2_body_exited"]
+[connection signal="body_entered" from="mesh/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="mesh/Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_exited" from="mesh/Area3D2" to="." method="_on_area_3d_2_body_exited"]

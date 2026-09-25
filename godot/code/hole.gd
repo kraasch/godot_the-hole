@@ -22,9 +22,12 @@ func _physics_process(delta: float) -> void:
 		direction.z += 1
 	position += direction * speed * delta
 
+var num = 0
+
 func _on_area_3d_body_entered(body: Node3D) -> void:
+	num += 1
+	print('hi fruit #' + str(num))
 	if body is MyFruit:
-		print('hi fruit')
 		body.sleeping = false
 		body.set_meta('over_hole', true)
 		body.set_collision_mask_value(1, false)
@@ -40,7 +43,7 @@ func _on_area_3d_2_body_exited(_body: Node3D) -> void:
 
 func _ready() -> void:
 	_grow_hole()
-	
+
 func _grow_hole() -> void:
 	#body.owner.queue_free() # TODO: remove the fruits.
 	print('+1UP')
