@@ -35,7 +35,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		body.set_collision_mask_value(1, true)
 		body.set_meta('over_hole', false)
 
-func _on_area_3d_2_body_exited(body: Node3D) -> void:
+func _on_area_3d_2_body_exited(_body: Node3D) -> void:
 	_grow_hole()
 
 func _ready() -> void:
@@ -157,5 +157,5 @@ func create_collision_ring(
 	shape.set_faces(faces)
 	var collision_shape: CollisionShape3D = CollisionShape3D.new()
 	collision_shape.shape = shape
-	collision_shape.global_position.y = -pillar_depth / 2.0
 	parent.add_child(collision_shape)
+	collision_shape.global_position.y = -pillar_depth / 2.0

@@ -18,7 +18,7 @@ height = 0.1
 radius = 0.4
 
 [node name="hole" type="MeshInstance3D" unique_id=1789251797]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8333333, 0, 0.5833333)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8333333, 0, 1.0833333)
 material_override = SubResource("ShaderMaterial_j5t2e")
 mesh = SubResource("CylinderMesh_jafpi")
 script = ExtResource("1_j5t2e")
